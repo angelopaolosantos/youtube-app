@@ -4,6 +4,7 @@ import VideoList from './video_list'
 import VideoView from './video_view'
 import YouTubeSearch from 'youtube-api-search'
 import _ from 'lodash'
+import styles from '../css/style.css'
 
 const YOUTUBE_API_KEY = 'AIzaSyB7zHpQcyk9an-SFLREUd-qQWpPg_1HQqo'
 
@@ -30,7 +31,7 @@ class App extends Component {
     const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300)
 
     return (
-      <div>
+      <div className={styles.wrapper} >
         <VideoSearch onSearchTermChange={videoSearch} />
         <VideoList videos={this.state.videos} onVideoSelect={selectedVideo => this.setState({selectedVideo})} />
         <VideoView selectedVideo={this.state.selectedVideo} />
