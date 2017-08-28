@@ -110,3 +110,34 @@ exports.CSS = function (env) {
     }
   }
 }
+
+exports.loadImages = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|svg)$/,
+        include,
+        exclude,
+
+        use: {
+          loader: 'url-loader',
+          options
+        }
+      }
+    ]
+  }
+})
+
+exports.loadFonts = () => ({
+  module: {
+    rules: [
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]'
+        }
+      }
+    ]
+  }
+})

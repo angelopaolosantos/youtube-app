@@ -64,11 +64,18 @@ module.exports = function (env) {
     return merge([
       Common,
       Parts.lintJS({ paths: PATHS.src }),
-      Parts.CSS(env)
+      Parts.CSS(env),
+      Parts.loadImages({
+        options: {
+          limit: 15000,
+          name: '[name].[ext]'
+        }
+      }),
+      Parts.loadFonts()
     ])
   }
   /**
-   * Develpment Configuration
+   * Development Configuration
    */
   return merge([
     Common,
@@ -82,6 +89,8 @@ module.exports = function (env) {
         emitWarning: true
       }
     }),
-    Parts.CSS(env)
+    Parts.CSS(env),
+    Parts.loadImages(),
+    Parts.loadFonts()
   ])
 }
