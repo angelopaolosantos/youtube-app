@@ -64,7 +64,7 @@ exports.CSS = function (env) {
                 loader: 'css-loader',
                 options: {
                   sourceMap: true,
-                  modules: true,
+                  modules: false,
                   localIdentName: '[path][name]__[local]--[hash:base64:5]'
                 }
               }
@@ -96,7 +96,7 @@ exports.CSS = function (env) {
               options: {
                 sourceMap: true,
                 // enables CSS modules
-                modules: true,
+                modules: false,
                 // generates a unique css rule for component styles. This property is what allows
                 // CSS modules to contain rules locally. You can name a CSS rule something generic
                 // such as `.normal` or `.red`, and `localIdentName` will generate a unique CSS rule

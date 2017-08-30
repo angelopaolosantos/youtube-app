@@ -13,8 +13,8 @@ const VideoView = ({selectedVideo}) => {
   const {title, publishedAt, description} = selectedVideo.snippet
   const videoPublished = moment(publishedAt).fromNow()
   return (
-    <div>
-      <iframe width='500' height='250' src={videoSource} />
+    <div className='embed-responsive embed-responsive-16by9'>
+      <iframe className='embed-responsive-item' src={videoSource} />
       <h1>{title}</h1>
       <div>{videoPublished}</div>
       <p>{description}</p>

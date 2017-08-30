@@ -20,7 +20,7 @@ export default class VideoSearch extends Component {
   render () {
     return (
       <div>
-        <input placeholder='Type video title to search' value={this.state.term} onChange={this.handleChange} />
+        <input className='form-control' placeholder='Type video title to search' value={this.state.term} onChange={this.handleChange} />
       </div>
     )
   }

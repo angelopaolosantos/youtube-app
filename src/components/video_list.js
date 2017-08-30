@@ -16,7 +16,7 @@ const VideoList = ({videos, onVideoSelect}) => {
   })
 
   return (
-    <ul>{Videos}</ul>
+    <ul className='list-group'>{Videos}</ul>
   )
 }
 

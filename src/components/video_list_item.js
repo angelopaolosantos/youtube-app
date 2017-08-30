@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const VideoListItem = ({video, onVideoSelect}) => {
   const {title, thumbnails} = video.snippet
   return (
-    <li onClick={() => onVideoSelect(video)}>
+    <li className='list-group-item' onClick={() => onVideoSelect(video)}>
       <img src={thumbnails.high.url} />
       <h3>{title}</h3>
     </li>
